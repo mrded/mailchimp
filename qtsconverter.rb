@@ -49,7 +49,7 @@ class MailChimpConvertor
       @columns.push(
         :industry => self.fix_industry(column[3]),
         :graduation_year => column[4],
-        :email => column[5],
+        :email => email,
         :source => source,
         :university => university,
       ) if email_is_valid?(email)
