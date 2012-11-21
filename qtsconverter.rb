@@ -44,6 +44,7 @@ class MailChimpConvertor
   def initialize(filename, source = '', university = '')
     @columns = []
     CSV.read(filename).each do |column|
+      email = column[5]
       
       @columns.push(
         :industry => self.fix_industry(column[3]),
@@ -51,20 +52,22 @@ class MailChimpConvertor
         :email => column[5],
         :source => source,
         :university => university,
-      )
+      ) if email_is_valid?(email)
     end
   end
 
   def save
     CSV.open("output.csv", "wb") do |csv|
-      # COLUMNS_HEADER.delete(:collect)
       csv << COLUMNS_HEADER.values
       
       @columns.each do |column|
-        # column.delete(:collect)
         csv << column.values
       end
     end
+  end
+  
+  def email_is_valid?(email)
+    !/\A[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]+\z/.match(email).nil?
   end
     
   def fix_industry(value)
