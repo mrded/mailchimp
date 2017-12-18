@@ -1,4 +1,4 @@
 Mailchimp Scripts
 ========================
 
-- `qtsconverter.rb` - Converts QuickTapSurvey export into Mailchimp valid format.
+- `quicktapsurvey2mailchimp.rb` - Converts QuickTapSurvey export into Mailchimp valid format.
