@@ -7,7 +7,7 @@ const md5 = require('md5');
 fs.createReadStream(process.argv[2])
   .pipe(csv())
   .on('data', function(data) {
-    let email = data['Email Address'];
+    let email = data['Email Address'].toLowerCase().trim();
     let hash = md5(email);
 
     process.stdout.write(hash + "\n");
