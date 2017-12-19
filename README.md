@@ -5,6 +5,7 @@ Mailchimp Scripts
 
     npm i
     ln -s mailchimp2md5.js /usr/local/bin/mailchimp2md5
+    ln -s md52mailchimp.js /usr/local/bin/md52mailchimp
 
 ## Convert email to MD5
 
