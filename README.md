@@ -8,4 +8,8 @@ Mailchimp Scripts
 
 ## Convert email to MD5
 
-    mailchimp2md5 fileName.cvs > wikijob_$(date +'%d%m%y%H%M%S')_MD5.txt
+    mailchimp2md5 email.cvs > wikijob_$(date +'%d%m%y%H%M%S')_MD5.txt
+
+## Match MD5 hashes with emails
+
+    md52mailchimp hashes.cvs emails.cvs
