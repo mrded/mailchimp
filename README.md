@@ -1,7 +1,10 @@
 Mailchimp Scripts
 ========================
 
-- `quicktapsurvey2mailchimp.rb` - Converts QuickTapSurvey export into Mailchimp valid format.
+# Install
+
+    npm i
+    ln -s mailchimp2md5.js /usr/local/bin/mailchimp2md5
 
 ## Convert email to MD5
 
