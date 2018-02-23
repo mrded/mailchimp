@@ -35,10 +35,12 @@ const emailsPromise = new Promise(function(resolve, reject) {
 });
 
 emailsPromise.then(function(emails) {
+  process.stdout.write("Email,Exclude\n");
+
   return hashesPromise.then(function(hashes) {
     for (hash of hashes) {
       if (emails.hasOwnProperty(hash)) {
-        process.stdout.write(emails[hash] + "\n");
+        process.stdout.write(emails[hash] + ",economist\n");
       }
     }
   });
