@@ -38,10 +38,13 @@ emailsPromise.then(function(emails) {
   process.stdout.write("Email,Exclude\n");
 
   return hashesPromise.then(function(hashes) {
-    for (hash of hashes) {
-      if (emails.hasOwnProperty(hash)) {
-        process.stdout.write(emails[hash] + ",economist\n");
-      }
+    for (hash of Object.keys(emails)) {
+      const output = [
+        emails[hash],
+        (hashes.indexOf(hash) !== -1) ? 'economist' : ''
+      ];
+      
+      process.stdout.write(output.join(',') + "\n");
     }
   });
 });
